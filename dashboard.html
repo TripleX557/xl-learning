@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - XLearning Platform</title>
+    <link rel="stylesheet" href="x.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <h1>XLearning Platform</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sidebar Section -->
+    <aside class="sidebar">
+        <h3>Dashboard</h3>
+        <ul>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">My Courses</a></li>
+            <li><a href="#">Progress</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-content">
+        <section class="overview">
+            <h2>Welcome, <span id="user-name">John Doe</span>!</h2>
+            <p>Your current progress and upcoming tasks are listed below.</p>
+
+            <div class="dashboard-cards">
+                <!-- Course Progress Card -->
+                <div class="card">
+                    <h3>My Progress</h3>
+                    <p>50% Complete</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%"></div>
+                    </div>
+                </div>
+
+                <!-- Notifications Card -->
+                <div class="card">
+                    <h3>Notifications</h3>
+                    <ul id="notifications-list">
+                        <!-- Notifications will be dynamically added here -->
+                    </ul>
+                    <button onclick="loadNotifications()">Load More</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-courses">
+            <h3>Your Courses</h3>
+            <ul id="course-list">
+                <!-- User's courses will be displayed here -->
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 XLearning Platform. All rights reserved.</p>
+    </footer>
+
+    <!-- Script Section -->
+    <script>
+        // Sample user data
+        const userData = {
+            name: "John Doe",
+            courses: [
+                { name: "Data Structures and Algorithms", progress: "70%" },
+                { name: "Operating Systems", progress: "30%" },
+                { name: "Database Systems", progress: "45%" }
+            ],
+            notifications: [
+                "New course available: Introduction to JavaScript",
+                "Your grade for 'Data Structures' is now available!",
+                "You have a new message from your instructor."
+            ]
+        };
+
+        // Function to populate course list
+        function loadCourses() {
+            const courseList = document.getElementById("course-list");
+            userData.courses.forEach(course => {
+                const courseItem = document.createElement("li");
+                courseItem.textContent = `${course.name} - ${course.progress}`;
+                courseList.appendChild(courseItem);
+            });
+        }
+
+        // Function to populate notifications
+        function loadNotifications() {
+            const notificationsList = document.getElementById("notifications-list");
+            userData.notifications.forEach(notification => {
+                const notificationItem = document.createElement("li");
+                notificationItem.textContent = notification;
+                notificationsList.appendChild(notificationItem);
+            });
+        }
+
+        // Load initial data
+        document.getElementById("user-name").textContent = userData.name;
+        loadCourses();
+        loadNotifications();
+    </script>
+
+</body>
+</html>

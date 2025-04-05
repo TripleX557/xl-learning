@@ -1,0 +1,137 @@
+/* Basic CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* CSS Variables for Primary (Dark) Theme */
+  :root {
+    --font-family: Georgia, serif;
+    --background-color: #222; /* Dark background for body */
+    --text-color: #fff;       /* White text */
+    --header-background: #ff0000; /* Bright red header */
+    --header-text: #fff;
+    --nav-link-color: #fff;
+    --section-background: #333;  /* Slightly lighter dark for sections */
+    --section-text: #fff;
+    --footer-background: #111;
+    --footer-text: #fff;
+    --transition-duration: 0.3s;
+            
+  }
+  
+  /* Dark Mode Variables (Light Mode Alternative) */
+  .dark-mode {
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --header-background: #aa0000; /* Darker red in dark mode alternative */
+    --header-text: #333;
+    --nav-link-color: #333;
+    --section-background: #fff;
+    --section-text: #333;
+    --footer-background: #ccc;
+    --footer-text: #333;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+  }
+  
+  /* Header and Navigation */
+  header {
+    background-color: var(--header-background);
+    color: var(--header-text);
+    padding: 20px 10px;
+    text-align: center;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+  }
+  
+  header h1 {
+    margin-bottom: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: var(--nav-link-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-duration), text-decoration var(--transition-duration);
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Section Styling */
+  section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    background-color: var(--section-background);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+  }
+  
+  section h2 {
+    margin-bottom: 10px;
+    color: var(--header-background);
+  }
+  
+  section p {
+    margin-bottom: 10px;
+    color: var(--section-text);
+  }
+  
+  /* Footer Styling */
+  footer {
+    background-color: var(--footer-background);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  header, section, footer {
+    animation: fadeIn 1s ease-in;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+    }
+    
+    nav ul li {
+      margin: 10px 0;
+    }
+    
+    section {
+      margin: 10px;
+      padding: 15px;
+    }
+  }
+  

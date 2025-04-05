@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brainwave Monitoring - Micro Learning</title>
+    <link rel="stylesheet" href="x.css">
+</head>
+<body>
+    <header>
+        <h1>Brainwave Monitoring - Micro Learning</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Learning Modules</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="brainwave-status">
+        <h2>Current Brainwave Status</h2>
+        <div id="brainwave-data">
+            <!-- Data from brainwave monitoring hardware will be dynamically inserted here -->
+            <p><strong>Alpha Waves:</strong> <span id="alpha-wave">0</span></p>
+            <p><strong>Beta Waves:</strong> <span id="beta-wave">0</span></p>
+            <p><strong>Theta Waves:</strong> <span id="theta-wave">0</span></p>
+            <p><strong>Delta Waves:</strong> <span id="delta-wave">0</span></p>
+        </div>
+    </section>
+
+    <section id="learning-suggestions">
+        <h2>Suggested Learning Based on Brainwave Data</h2>
+        <div id="suggestions">
+            <p id="suggestion">Waiting for brainwave data...</p>
+        </div>
+    </section>
+
+    <section id="history">
+        <h2>Brainwave Data History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Alpha</th>
+                    <th>Beta</th>
+                    <th>Theta</th>
+                    <th>Delta</th>
+                </tr>
+            </thead>
+            <tbody id="history-table">
+                <!-- Data history will be inserted here -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Brainwave Learning Platform</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

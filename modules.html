@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLearning Modules</title>
+    <link rel="stylesheet" href="x.css"> <!-- Link to your CSS file -->
+    <script src="script.js" defer></script> <!-- Link to your JavaScript file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .module-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .module-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .module-card:hover {
+            transform: scale(1.05);
+        }
+        .module-card h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .module-card p {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>XLearning Modules</h2>
+        <div class="module-list">
+            <div class="module-card" onclick="openModule('Module1')">
+                <h3>Module 1</h3>
+                <p>Introduction to Learning</p>
+            </div>
+            <div class="module-card" onclick="openModule('Module2')">
+                <h3>Module 2</h3>
+                <p>Deep Learning Concepts</p>
+            </div>
+            <div class="module-card" onclick="openModule('Module3')">
+                <h3>Module 3</h3>
+                <p>Brainwave Optimization</p>
+            </div>
+            <div class="module-card" onclick="openModule('Module4')">
+                <h3>Module 4</h3>
+                <p>Interactive Learning Strategies</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModule(moduleId) {
+            alert("Opening " + moduleId);
+            // You can replace this with logic to load the module's page
+        }
+    </script>
+</body>
+</html>
